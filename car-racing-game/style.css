@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+  }
+  
+  .game-area {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .road {
+    width: 60vw;
+    height: 100vh;
+    background-color: #555;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #444;
+  }
+  
+  .car {
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ff4f4f;
+    border-radius: 5px;
+  }
+  
+  .obstacle {
+    width: 40px;
+    height: 60px;
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    background-color: #222;
+    border-radius: 5px;
+    animation: moveObstacle 3s linear infinite;
+  }
+  
+  @keyframes moveObstacle {
+    0% {
+      top: -60px;
+    }
+    100% {
+      top: 100vh;
+    }
+  }
+  
+  @media only screen and (max-width: 600px) {
+    .road {
+      width: 90vw;
+    }
+    .car, .obstacle {
+      width: 30px;
+      height: 45px;
+    }
+  }
+  
